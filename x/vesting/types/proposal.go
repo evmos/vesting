@@ -18,7 +18,7 @@ var _ v1beta1.Content = &ClawbackProposal{}
 
 func init() {
 	v1beta1.RegisterProposalType(ProposalTypeClawback)
-	v1beta1.ModuleCdc.Amino.RegisterConcrete(&ClawbackProposal{}, "vesting/ClawbackProposal", nil)
+	//v1beta1.ModuleCdc.Amino.RegisterConcrete(&ClawbackProposal{}, "vesting/ClawbackProposal", nil)
 }
 
 // NewClawbackProposal returns new instance of RegisterCoinProposal

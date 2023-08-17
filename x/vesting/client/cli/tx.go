@@ -5,6 +5,7 @@ package cli
 
 import (
 	"fmt"
+	"github.com/evmos/vesting/x/vesting/types"
 	"strconv"
 	"time"
 
@@ -18,8 +19,6 @@ import (
 	sdkvesting "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 	"github.com/cosmos/cosmos-sdk/x/gov/client/cli"
 	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
-
-	"github.com/evmos/vesting/types"
 )
 
 // Transaction command flags

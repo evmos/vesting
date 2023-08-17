@@ -7,8 +7,7 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	errortypes "github.com/cosmos/cosmos-sdk/types/errors"
-
-	"github.com/evmos/vesting/types"
+	"github.com/evmos/vesting/x/vesting/types"
 )
 
 // NewHandler returns a handler for vesting module message types.

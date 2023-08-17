@@ -5,11 +5,11 @@ package keeper
 
 import (
 	"fmt"
+	"github.com/evmos/vesting/x/vesting/types"
 
 	errorsmod "cosmossdk.io/errors"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/evmos/vesting/types"
 )
 
 // GetClawbackVestingAccount is a helper function to get the account from the

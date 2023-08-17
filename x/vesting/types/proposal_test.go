@@ -1,9 +1,9 @@
 package types_test
 
 import (
+	"github.com/evmos/vesting/x/vesting/types"
 	"testing"
 
-	"github.com/evmos/vesting/types"
 	"github.com/stretchr/testify/suite"
 )
 

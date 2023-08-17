@@ -6,12 +6,11 @@ package cli
 import (
 	"context"
 	"fmt"
+	"github.com/evmos/vesting/x/vesting/types"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
-
-	"github.com/evmos/vesting/types"
 )
 
 // GetQueryCmd returns the parent command for all vesting CLI query commands.

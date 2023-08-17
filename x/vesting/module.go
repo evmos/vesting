@@ -6,12 +6,15 @@ package vesting
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 
+	"github.com/evmos/vesting/x/vesting/client/cli"
+	keeper2 "github.com/evmos/vesting/x/vesting/keeper"
+	"github.com/evmos/vesting/x/vesting/types"
+
+	abci "github.com/cometbft/cometbft/abci/types"
 	"github.com/gorilla/mux"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
-	abci "github.com/tendermint/tendermint/abci/types"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
@@ -21,10 +24,6 @@ import (
 	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-
-	"github.com/evmos/vesting/client/cli"
-	"github.com/evmos/vesting/keeper"
-	"github.com/evmos/vesting/types"
 )
 
 var (
@@ -87,7 +86,7 @@ func (AppModuleBasic) GetQueryCmd() *cobra.Command {
 // AppModule interface.
 type AppModule struct {
 	AppModuleBasic
-	keeper keeper.Keeper
+	keeper keeper2.Keeper
 	ak     authkeeper.AccountKeeper
 	bk     bankkeeper.Keeper
 	sk     stakingkeeper.Keeper
@@ -95,7 +94,7 @@ type AppModule struct {
 
 // NewAppModule returns a new vesting AppModule.
 func NewAppModule(
-	k keeper.Keeper,
+	k keeper2.Keeper,
 	ak authkeeper.AccountKeeper,
 	bk bankkeeper.Keeper,
 	sk stakingkeeper.Keeper,
@@ -120,10 +119,10 @@ func (am AppModule) NewHandler() sdk.Handler {
 	return NewHandler(am.keeper)
 }
 
-// Route returns the module's message router and handler.
-func (am AppModule) Route() sdk.Route {
-	return sdk.NewRoute(types.RouterKey, am.NewHandler())
-}
+//// Route returns the module's message router and handler.
+//func (am AppModule) Route() sdk.Route {
+//	return sdk.NewRoute(types.RouterKey, am.NewHandler())
+//}
 
 // QuerierRoute returns an empty string as the module contains no query
 // functionality.
@@ -135,17 +134,6 @@ func (AppModule) QuerierRoute() string {
 func (am AppModule) RegisterServices(cfg module.Configurator) {
 	types.RegisterMsgServer(cfg.MsgServer(), am.keeper)
 	types.RegisterQueryServer(cfg.QueryServer(), am.keeper)
-
-	migrator := keeper.NewMigrator(am.keeper)
-
-	if err := cfg.RegisterMigration(types.ModuleName, 1, migrator.Migrate1to2); err != nil {
-		panic(fmt.Errorf("failed to migrate %s to v2: %w", types.ModuleName, err))
-	}
-}
-
-// LegacyQuerierHandler performs a no-op.
-func (am AppModule) LegacyQuerierHandler(_ *codec.LegacyAmino) sdk.Querier {
-	return nil
 }
 
 // InitGenesis performs genesis initialization for the vesting module. It returns

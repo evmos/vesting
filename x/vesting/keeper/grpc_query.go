@@ -5,12 +5,11 @@ package keeper
 
 import (
 	"context"
+	"github.com/evmos/vesting/x/vesting/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-
-	"github.com/evmos/vesting/types"
 )
 
 var _ types.QueryServer = Keeper{}

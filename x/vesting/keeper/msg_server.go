@@ -6,6 +6,7 @@ package keeper
 import (
 	"context"
 	"fmt"
+	"github.com/evmos/vesting/x/vesting/types"
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
@@ -16,7 +17,6 @@ import (
 	errortypes "github.com/cosmos/cosmos-sdk/types/errors"
 	sdkvesting "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	"github.com/evmos/vesting/types"
 )
 
 var _ types.MsgServer = &Keeper{}

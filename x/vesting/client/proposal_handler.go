@@ -5,8 +5,7 @@ package client
 
 import (
 	govclient "github.com/cosmos/cosmos-sdk/x/gov/client"
-
-	"github.com/evmos/vesting/client/cli"
+	"github.com/evmos/vesting/x/vesting/client/cli"
 )
 
 var RegisterClawbackProposalHandler = govclient.NewProposalHandler(cli.NewClawbackProposalCmd)
