@@ -63,11 +63,11 @@ func RegisterInterfaces(registry codectypes.InterfaceRegistry) {
 
 	registry.RegisterImplementations(
 		(*sdk.Msg)(nil),
-		&MsgClawback{},
 		&MsgCreateClawbackVestingAccount{},
 		&MsgUpdateVestingFunder{},
 		&MsgFundVestingAccount{},
 		&MsgConvertVestingAccount{},
+		&MsgClawback{},
 	)
 
 	registry.RegisterImplementations(
