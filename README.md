@@ -63,3 +63,30 @@ type HandlerOptions struct {
 ```
 
 - Lastly, all expected keepers interfaces should have the required functions, like the `BankKeeper` needs the `GetBalance` function.
+
+## Licensing
+
+### SPDX Identifier
+
+The following header including a license identifier in SPDX short form has been added to all ENCL-1.0 files:
+
+```go
+// Copyright Tharsis Labs Ltd.(Evmos)
+// SPDX-License-Identifier:ENCL-1.0(https://github.com/evmos/evmos/blob/main/LICENSE)
+```
+
+Exempted files contain the following SPDX ID:
+
+```go
+// Copyright Tharsis Labs Ltd.(Evmos)
+// SPDX-License-Identifier:LGPL-3.0-only
+```
+
+### License FAQ
+
+Find below an overview of the Permissions and Limitations of the Evmos Non-Commercial License 1.0.
+For more information, check out the full ENCL-1.0 FAQ [here](/LICENSE_FAQ.md).
+
+| Permissions                                                                                                                                                                  | Prohibited                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| - Private Use, including distribution and modification<br />- Commercial use on designated blockchains<br />- Commercial use with Evmos permit (to be separately negotiated) | - Commercial use, other than on designated blockchains, without Evmos permit |
