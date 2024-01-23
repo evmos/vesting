@@ -30,7 +30,7 @@ evmosvesting.NewAppModule(app.VestingKeeper, app.AccountKeeper, app.BankKeeper, 
 
 ### Enable `from` flag for the CLI
 
-- Enable the `from` [flag in the CLI](https://github.com/Stride-Labs/stride/blob/405fb9c961e537619092dc51cc70107aedf03ba4/cmd/strided/root.go#L268) to be able to specify the sender key
+- Enable the `from` [flag in the CLI](https://github.com/Stride-Labs/stride/blob/405fb9c961e537619092dc51cc70107aedf03ba4/cmd/strided/root.go#L268) to be able to specify the sender key.
 
 ### `AnteHandler` for Locked and Unvested tokens
 
