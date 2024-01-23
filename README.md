@@ -18,7 +18,10 @@ please visit the corresponding page in the [docs](https://docs.evmos.org/protoco
 
 ## Implementing the Module
 
-Here the main steps to include the [evmos/vesting](https://github.com/evmos/vesting) module in the Stride chain, used as an example, are reported. Because each chain may have specific characteristics, the following steps should not be taken as general, and other modifications may be necessary before the module can be used correctly.
+The shown example demonstrates how to include the [evmos/vesting](https://github.com/evmos/vesting) module in the Stride chain.
+Because each chain may have specific characteristics,
+the following steps might not be universally applicable,
+and other modifications may be necessary before the module can be used correctly.
 
 ### `app.go` Wiring
 
