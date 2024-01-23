@@ -26,11 +26,11 @@ and other modifications may be necessary before the module can be used correctly
 ### `app.go` Wiring
 
 - Register the [governance clawback](https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L181) proposal handler in the `govProposalHandlers`.
-- Include the vesting module’s `[AppModuleBasic](https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L227)` into the chain’s `ModuleBasics`.
-- Include the `VestingKeeper` in the [`StrideApp`](https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L282) struct.
-- Include the vesting module’s `StoreKey` into the the `KVStoreKey` map
-- Initialize the `[VestingKeeper](https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L618)`.
-- Add the new `AppModule`
+- Include the vesting module’s `[AppModuleBasic].(https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L227)` into the chain’s `ModuleBasics`.
+- Include the `VestingKeeper` in the [`StrideApp`].(https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L282) struct.
+- Include the vesting module’s `StoreKey` into the the `KVStoreKey` map.
+- Initialize the `[VestingKeeper].(https://github.com/Vvaradinov/stride/blob/ec1df0f0cfc377eda48c84263b3925ca91b4731f/app/app.go#L618)`.
+- Add the new `AppModule`.
 
 ```go
 evmosvesting.NewAppModule(app.VestingKeeper, app.AccountKeeper, app.BankKeeper, app.StakingKeeper),
