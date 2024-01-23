@@ -13,7 +13,8 @@ which are then released according to the defined lockup and vesting schedules.
 The funder of the account can claw back unvested tokens at any time.
 The clawback can also be enforced through a governance proposal for any account that opts in to this when converting to a vesting account.
 
-For a complete description of the vesting functionalities, please visit the relative page in the [doc](https://docs.evmos.org/protocol/modules/vesting#state-transitions).
+For a complete description of the vesting functionalities,
+please visit the corresponding page in the [docs](https://docs.evmos.org/protocol/modules/vesting#state-transitions).
 
 ## Implementing the Module
 
