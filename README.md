@@ -36,7 +36,7 @@ and other modifications may be necessary before the module can be used correctly
 evmosvesting.NewAppModule(app.VestingKeeper, app.AccountKeeper, app.BankKeeper, app.StakingKeeper),
 ```
 
-- Include the vesting module in the `BeginBlocker` and `EndBlocker` stack
+- Include the vesting module in the `BeginBlocker` and `EndBlocker` stack.
 
 ### Enable `from` flag for the CLI
 
